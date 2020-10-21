@@ -215,4 +215,32 @@ declare module 'react-native-circular-progress' {
       ease?: EasingFunction
     ) => void;
   }
+
+  export class AnimatedCircularInfinite extends React.Component<
+    AnimatedCircularProgressProps
+    > {
+    /**
+     * Animate the progress bar to a specific value
+     *
+     * @param {number} toVal
+     * @param {number} duration
+     * @param {Function} ease
+     */
+    animate: (toVal: number, duration: number, ease?: Function) => Animated.CompositeAnimation;
+
+    /**
+     * Re-run animation with a specified prefill-value
+     *
+     * @param {number} prefill
+     * @param {number} toVal
+     * @param {number} duration
+     * @param {Function} ease
+     */
+    reAnimate: (
+      prefill: number,
+      toVal: number,
+      duration: number,
+      ease?: Function
+    ) => void;
+  }
 }
